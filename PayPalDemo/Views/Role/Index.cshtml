@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PayPalDemo.ViewModels.RoleVM>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Roles</h1>
+@if (ViewBag.Message.Length> 0)
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+<p>
+    <a asp-action="Create">Create New Role</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoleName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+                </td>
+            <td>
+                <a asp-action="Delete" asp-route-roleName="@item.RoleName">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

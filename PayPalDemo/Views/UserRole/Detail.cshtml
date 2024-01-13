@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PayPalDemo.ViewModels.RoleVM>
+
+@{
+    ViewData["Title"] = "User Roles Detail";
+    string message = ViewBag.Message;
+}
+
+<h3>User: @ViewBag.UserName</h3>
+@if (message.Length > 0 && ViewBag.success == true)
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
+else if (message.Length > 0 && ViewBag.success == false)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Message
+    </div>
+}
+<p>
+    @Html.ActionLink( "Assign Roles"
+    , "Create"
+    , new { userName = @ViewBag.UserName })
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.RoleName)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoleName)
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    <form asp-action="Delete">
+                        <input type="hidden" name="RoleName" value="@item.RoleName" />
+                        <input type="hidden" name="Email" value="@ViewBag.Email" />
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

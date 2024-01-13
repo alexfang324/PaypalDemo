@@ -1,0 +1,105 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+h1, a, th {
+    color: #6E0B14;
+}
+
+h1 {
+    font-size:25px;
+}
+
+.vert-offset-40 {
+    padding-top: 40px;
+}
+
+.text-grey {
+    color: #D9D9D9 !important;
+}
+
+
+.col-horiz-center {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+nav > div {
+    background-color: #6E0B14;
+    line-height: 1.5;
+}
+
+.nav-menu li {
+    padding-right: 20px;
+    font-size: 1.3rem;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+
+#nav-icon {
+    width: 70px;
+}
+
+#home-banner {
+    text-align: center;
+}
+
+#home-banner > div {
+    font-weight: 700;
+    line-height: 1rem;
+}
+
+
+.banner-text-big {
+    font-size: 2rem;
+    margin: 0px;
+    color: #6E0B14;
+}
+
+.banner-text-small {
+    font-size: 1.6rem;
+    margin: 0px;
+    color: #6E0B14;
+}
+
+#banner-slogan {
+    font-size: 1.5rem;
+    line-height: 0.6rem;
+    color: #8B8B8B;
+}
+
+#img-card-symbol {
+    max-width: 70%;
+    opacity: 0.08;
+}
+
+#shop-btn {
+    display:block;
+    background-color: #6E0B14;
+    color: white;
+    width:100px;
+    margin:auto;
+}
